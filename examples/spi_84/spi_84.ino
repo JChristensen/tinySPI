@@ -38,6 +38,13 @@ const int SO_LATCH = 10;           //storage register clock (slave select) -- so
 
 void setup(void)
 {
+    //pullups on for unused pins to minimize power consumption
+    pinMode(0, INPUT_PULLUP);
+    pinMode(1, INPUT_PULLUP);
+    pinMode(2, INPUT_PULLUP);
+    pinMode(3, INPUT_PULLUP);
+    pinMode(4, INPUT_PULLUP);
+    
     SPI.begin();                   //start hardware SPI
     pinMode(SPI_LATCH, OUTPUT);    //set up the hardware SS pin (the SPI library sets up the clock and data pins)
     digitalWrite(SPI_LATCH, HIGH);

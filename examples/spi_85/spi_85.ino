@@ -31,6 +31,10 @@ const int CLOCK_PIN = 2;           //shift register clock
 
 void setup(void)
 {
+    //pullups on for unused pins to minimize power consumption
+    pinMode(3, INPUT_PULLUP);
+    pinMode(4, INPUT_PULLUP);
+    
     #if HARDWARE_SPI == 1
     SPI.begin();                   //start hardware SPI (the library sets up the clock and data pins)
     #else
