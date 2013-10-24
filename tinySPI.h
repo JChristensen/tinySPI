@@ -1,5 +1,6 @@
 /*----------------------------------------------------------------------*
- * tinySPI.h - Arduino hardware SPI library for ATtiny44/84/45/85.      *
+ * tinySPI.h - Arduino hardware SPI master library for ATtiny44/84,     *
+ * and ATtiny45/85.                                                     *
  * Runs about 15 times faster than shiftOut().                          *
  *                                                                      *
  * Jack Christensen 24Oct2013                                           *

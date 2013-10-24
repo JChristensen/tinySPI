@@ -1,12 +1,15 @@
-//Demonstrates use of hardware or software SPI on an ATtiny85
+//Demonstrates use of hardware or software SPI on an ATtiny45/85
 //to make an 8-LED chaser with a 74HC595 shift register.
 //Written using Arduino 1.0.5 with the Arduino-Tiny ATtiny
 //core, http://code.google.com/p/arduino-tiny/
 //
-//Connect:
+//Connections:
 //  ATtiny85 pin 0 (DIP pin 5, PB0) to 74HC595 pin 12 (storage register clock)
 //  ATtiny85 pin 1 (DIP pin 6, PB1) to 74HC595 pin 14 (data in)
 //  ATtiny85 pin 2 (DIP pin 7, PB2) to 74HC595 pin 11 (shift register clock)
+//
+//Connect eight LEDs from the shift register's outputs (Q0-Q7) to ground, through
+//appropriate current-limiting resistors.
 //
 //Jack Christensen 24Oct2013
 //
@@ -43,7 +46,10 @@ void loop(void)
     for (int b=0; b<8; b++) {
         uint8_t myByte = 1 << b;
         digitalWrite(LATCH_PIN, LOW);
-        for(int n=0; n<1000; n++) {    //write the same byte 1000 times
+        
+        //write the same byte 1000 times so the difference can be seen
+        //  between hardware and software SPI.
+        for(int n=0; n<1000; n++) {
             #if HARDWARE_SPI == 1
             SPI.transfer(myByte);
             #else
