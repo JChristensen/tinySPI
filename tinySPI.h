@@ -35,8 +35,9 @@ class tinySPI
 {
     public:
         tinySPI();
-        void begin();
+        void begin(void);
         uint8_t transfer(uint8_t spiData);
+        void end(void);
 };
 
 extern tinySPI SPI;

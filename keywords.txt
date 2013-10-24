@@ -1,3 +1,4 @@
 tinySPI	KEYWORD1
 begin	KEYWORD2
 transfer	KEYWORD2
+end	KEYWORD2

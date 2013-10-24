@@ -38,4 +38,9 @@ uint8_t tinySPI::transfer(uint8_t spiData)
     return USIDR;
 }
 
+void tinySPI::end(void)
+{
+    USICR = 0;
+}
+
 tinySPI SPI = tinySPI();                //instantiate a tinySPI object
