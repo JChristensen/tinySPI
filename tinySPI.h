@@ -1,7 +1,6 @@
 /*----------------------------------------------------------------------*
  * tinySPI.h - Arduino hardware SPI master library for ATtiny44/84,     *
  * and ATtiny45/85.                                                     *
- * Runs about 15 times faster than shiftOut().                          *
  *                                                                      *
  * Jack Christensen 24Oct2013                                           *
  *                                                                      *
@@ -18,7 +17,9 @@
 
 #include <stdint.h>
 #include <avr/io.h>
+#include <util/atomic.h>
 
+//USI ports and pins
 #if defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
 #define SPI_DDR_PORT DDRA
 #define USCK_DD_PIN DDA4
@@ -31,11 +32,16 @@
 #define DI_DD_PIN DDB0
 #endif
 
+//SPI data modes
+#define SPI_MODE0 0x00
+#define SPI_MODE1 0x04
+
 class tinySPI
 {
     public:
         tinySPI();
         void begin(void);
+        void setDataMode(uint8_t spiDataMode);
         uint8_t transfer(uint8_t spiData);
         void end(void);
 };
