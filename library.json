@@ -1,5 +1,6 @@
 {
    "name":"tinySPI",
+   "version": "1.0.0",
    "keywords":"spi",
    "description":"SPI library to Attiny44/84/45/85",
    "repository":{
