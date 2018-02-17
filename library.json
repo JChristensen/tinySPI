@@ -1,0 +1,11 @@
+{
+   "name":"tinySPI",
+   "keywords":"spi",
+   "description":"SPI library to Attiny44/84/45/85",
+   "repository":{
+      "type":"git",
+      "url":"http://github.com/JChristensen/tinySPI/"
+   },
+   "frameworks":"arduino",
+   "platforms":"atmelavr"
+}
