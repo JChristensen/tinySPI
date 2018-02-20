@@ -4,12 +4,9 @@ README file
 Jack Christensen Oct 2013  
 
 ## Description
-*tinySPI* is an Arduino SPI master library for ATtiny44/84/45/85 that utilizes the USI
-hardware in the ATtiny MCUs.
+*tinySPI* is an Arduino SPI master library for ATtiny microcontrollers that utilizes the USI hardware in the ATtiny MCUs. Supported MCUs include ATtiny 44/84, 45/85, 461/861, 2313/4313.
 
-Because the USI hardware is not as sophisticated as the dedicated SPI hardware
-in the ATmega MCUs, *tinySPI* is more limited than the [standard Arduino
-SPI library](http://arduino.cc/en/Reference/SPI) but still has several advantages over software bit-bang approaches.
+Because the USI hardware is not as sophisticated as the dedicated SPI hardware in the ATmega MCUs, *tinySPI* is more limited than the [standard Arduino SPI library](http://arduino.cc/en/Reference/SPI) but still has several advantages over software bit-bang approaches.
 
 As compared to the [Arduino shiftOut() function](http://arduino.cc/en/Reference/ShiftOut), *tinySPI*
 
@@ -19,20 +16,17 @@ As compared to the [Arduino shiftOut() function](http://arduino.cc/en/Reference/
  
 *tinySPI* does not support
 
-- sending least-significant bit first,
+- sending the least-significant bit first,
 - SPI data modes 2 and 3, or
-- various SPI clock frequencies.
+- user-selectable SPI clock frequencies.
  
-*tinySPI* will generate an SPI bit clock that is about one-tenth the MCU
-system clock frequency. For example, given a 1MHz system clock, the SPI clock
-will be about 100kHz, and it will take about 80μs to transfer one byte. 
+*tinySPI* will generate an SPI bit clock that is about one-tenth the MCU system clock frequency. For example, given a 1MHz system clock, the SPI clock will be about 100kHz, and it will take about 80μs to transfer one byte. 
 
-Interrupts are inhibited during each byte transfer to ensure a consistent
-bit clock period.
+Interrupts are inhibited during each byte transfer to ensure a consistent bit clock period.
 
 Included with the library are example sketches that demonstrate driving a 74HC595 shift register from an ATtiny84 and from an ATtiny85.
 
-*tinySPI* was developed with [Arduino 1.0.5](http://arduino.cc/en/Main/Software) and the [Arduino-Tiny](http://code.google.com/p/arduino-tiny/) ATtiny core 0100-0017.
+*tinySPI* has been tested with [Arduino 1.8.5](http://arduino.cc/en/Main/Software) and the [ATTiny Core](https://github.com/SpenceKonde/ATTinyCore/).
 
 ## Methods
 * begin()
@@ -62,7 +56,7 @@ None.
 
 ### setDataMode()
 ##### Description
-Sets the SPI data mode, i.e. clock polarity and phase. See the Wikipedia article on SPI for details.
+Sets the SPI data mode, i.e. clock polarity and phase. See the [Wikipedia article on SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus#Clock_polarity_and_phase) for details.
 ##### Syntax
 SPI.setDataMode(mode)
 ##### Parameters
