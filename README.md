@@ -1,10 +1,21 @@
 # Arduino tinySPI Library
 http://github.com/JChristensen/tinySPI  
 README file  
-Jack Christensen Oct 2013  
+Jack Christensen  
+Oct 2013  
+
+## License
+Arduino tinySPI Library Copyright (C) 2018 Jack Christensen GNU GPL v3.0
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License v3.0 as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/gpl.html>
 
 ## Description
-*tinySPI* is an Arduino SPI master library for ATtiny microcontrollers that utilizes the USI hardware in the ATtiny MCUs. Supported MCUs include ATtiny 44/84, 45/85, 461/861, 2313/4313.
+*tinySPI* is an Arduino SPI master library for ATtiny microcontrollers that utilizes the USI hardware in the ATtiny MCUs. Supported MCUs include ATtiny24/44/84, 25/45/85, 261/461/861, 2313/4313.
 
 Because the USI hardware is not as sophisticated as the dedicated SPI hardware in the ATmega MCUs, *tinySPI* is more limited than the [standard Arduino SPI library](http://arduino.cc/en/Reference/SPI) but still has several advantages over software bit-bang approaches.
 

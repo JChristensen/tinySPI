@@ -1,5 +1,9 @@
-// Demonstrates use of hardware or software SPI on an ATtiny45/85
-// to make an 8-LED chaser with a 74HC595 shift register.
+// Arduino tinySPI Library Copyright (C) 2018 by Jack Christensen and
+// licensed under GNU GPL v3.0, https://www.gnu.org/licenses/gpl.html
+// https://github.com/JChristensen/tinySPI
+//
+// Example sketch to demonstrate use of hardware or software SPI on an
+// ATtiny25/45/85 to make an 8-LED chaser with a 74HC595 shift register.
 // Tested with Arduino 1.8.5 and the ATTiny Core,
 // https://github.com/SpenceKonde/ATTinyCore
 //
@@ -17,9 +21,6 @@
 // Enable pin (OE) to ground.
 //
 // Jack Christensen 24Oct2013
-//
-// This work by Jack Christensen is licensed under
-// CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
 
 #include <tinySPI.h>            // https://github.com/JChristensen/tinySPI
 
