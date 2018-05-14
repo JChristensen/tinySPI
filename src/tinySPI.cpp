@@ -9,7 +9,7 @@
 
 #include <tinySPI.h>
 
-static void tinySPI::begin()
+void tinySPI::begin()
 {
     USICR &= ~(_BV(USISIE) | _BV(USIOIE) | _BV(USIWM1));
     USICR |= _BV(USIWM0) | _BV(USICS1) | _BV(USICLK);
@@ -18,7 +18,7 @@ static void tinySPI::begin()
     SPI_DDR_PORT &= ~_BV(DI_DD_PIN);    // set the DI pin as input
 }
 
-static void tinySPI::setDataMode(uint8_t spiDataMode)
+void tinySPI::setDataMode(uint8_t spiDataMode)
 {
     if (spiDataMode == SPI_MODE1)
         USICR |= _BV(USICS0);
@@ -26,7 +26,7 @@ static void tinySPI::setDataMode(uint8_t spiDataMode)
         USICR &= ~_BV(USICS0);
 }
 
-static uint8_t tinySPI::transfer(uint8_t spiData)
+uint8_t tinySPI::transfer(uint8_t spiData)
 {
     USIDR = spiData;
     USISR = _BV(USIOIF);                // clear counter and counter overflow interrupt flag
@@ -37,7 +37,7 @@ static uint8_t tinySPI::transfer(uint8_t spiData)
     return USIDR;
 }
 
-static void tinySPI::end()
+void tinySPI::end()
 {
     USICR &= ~(_BV(USIWM1) | _BV(USIWM0));
 }
